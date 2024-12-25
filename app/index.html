@@ -1,19 +1,131 @@
-
-
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Welcome to My Hugging Face Space</title>
+    <title>API Proxy Service</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+            padding: 2rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            padding: 2rem;
+        }
+
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 2rem;
+            font-size: 2.5rem;
+        }
+
+        .description {
+            text-align: center;
+            color: #666;
+            margin-bottom: 2rem;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 2rem;
+            background: white;
+        }
+
+        th, td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+            font-size: 0.9rem;
+        }
+
+        th {
+            background: #f8f9fa;
+            color: #2c3e50;
+            font-weight: 600;
+        }
+
+        tr:hover {
+            background-color: #f8f9fa;
+            transition: all 0.3s ease;
+        }
+
+        .proxy-url {
+            color: #3498db;
+        }
+
+        .target-url {
+            color: #2ecc71;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+
+            th, td {
+                padding: 0.5rem;
+                font-size: 0.8rem;
+            }
+        }
+    </style>
 </head>
 <body>
+    <div class="container">
+        <h1>API 代理服务</h1>
+        <p class="description">为各大AI模型提供稳定可靠的代理服务</p>
 
-    https://api.crazy4.me/gemini/v1/{path}	https://generativelanguage.googleapis.com/v1/{path}
-    https://api.crazy4.me/gemini/v1beta/{path}	https://generativelanguage.googleapis.com/v1beta/{path}
-    https://api.crazy4.me/groq/openai/v1/{path}	https://api.groq.com/openai/v1/{path}
-    https://api.crazy4.me/cohere/v1/{path}	https://api.cohere.ai/v1/{path}
-    https://api.crazy4.me/xai/v1/{path}	https://api.x.ai/v1/{path}
-    https://api.crazy4.me/mistral/v1/{path}	https://api.mistral.ai/v1/{path}
-    https://api.crazy4.me/github/v1/{path}	https://models.inference.ai.azure.com/{path}
-    
+        <table>
+            <thead>
+                <tr>
+                    <th>代理地址</th>
+                    <th>目标地址</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="proxy-url">https://zhepama-nginx-proxy.hf.space/gemini/v1/{path}</td>
+                    <td class="target-url">https://generativelanguage.googleapis.com/v1/{path}</td>
+                </tr>
+                <tr>
+                    <td class="proxy-url">https://zhepama-nginx-proxy.hf.space/gemini/v1beta/{path}</td>
+                    <td class="target-url">https://generativelanguage.googleapis.com/v1beta/{path}</td>
+                </tr>
+                <tr>
+                    <td class="proxy-url">https://zhepama-nginx-proxy.hf.space/groq/openai/v1/{path}</td>
+                    <td class="target-url">https://api.groq.com/openai/v1/{path}</td>
+                </tr>
+                <tr>
+                    <td class="proxy-url">https://zhepama-nginx-proxy.hf.space/cohere/v1/{path}</td>
+                    <td class="target-url">https://api.cohere.ai/v1/{path}</td>
+                </tr>
+                <tr>
+                    <td class="proxy-url">https://zhepama-nginx-proxy.hf.space/xai/v1/{path}</td>
+                    <td class="target-url">https://api.x.ai/v1/{path}</td>
+                </tr>
+                <tr>
+                    <td class="proxy-url">https://zhepama-nginx-proxy.hf.space/mistral/v1/{path}</td>
+                    <td class="target-url">https://api.mistral.ai/v1/{path}</td>
+                </tr>
+                <tr>
+                    <td class="proxy-url">https://zhepama-nginx-proxy.hf.space/github/v1/{path}</td>
+                    <td class="target-url">https://models.inference.ai.azure.com/{path}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </body>
 </html>
