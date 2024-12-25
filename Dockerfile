@@ -28,7 +28,7 @@ RUN chmod -R 755 /var/cache/nginx \
     && chmod -R 755 /var/run \
     && chmod -R 755 /var/log/nginx \
     && chmod -R 755 /usr/share/nginx/html \
-    && chmod -R 755 /etc/nginx/conf.d \
+    && chmod -R 777 /etc/nginx/conf.d \
     && chmod -R 777 /etc/nginx/conf.d/default.conf \
     && chmod -R 777 /var/run/nginx.pid
 
