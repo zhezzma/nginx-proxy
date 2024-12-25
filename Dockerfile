@@ -21,7 +21,7 @@ RUN chown -R nginx:nginx /var/cache/nginx \
     && chown -R nginx:nginx /var/log/nginx \
     && chown -R nginx:nginx /usr/share/nginx/html \
     && chown -R nginx:nginx /etc/nginx/conf.d \
-    && chown -R nginx:nginx /etc/nginx/conf.d/default.conf
+    && chown -R nginx:nginx /etc/nginx/conf.d/default.conf \
     && chmod -R nginx:nginx /var/run/nginx.pid
 
 RUN chmod -R 755 /var/cache/nginx \
@@ -29,7 +29,7 @@ RUN chmod -R 755 /var/cache/nginx \
     && chmod -R 755 /var/log/nginx \
     && chmod -R 755 /usr/share/nginx/html \
     && chmod -R 755 /etc/nginx/conf.d \
-    && chmod -R 777 /etc/nginx/conf.d/default.conf
+    && chmod -R 777 /etc/nginx/conf.d/default.conf \
     && chmod -R 777 /var/run/nginx.pid
 
 # 复制 nginx 配置文件
