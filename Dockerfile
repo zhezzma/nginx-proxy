@@ -12,7 +12,8 @@ RUN mkdir -p /var/cache/nginx/client_temp \
     && mkdir -p /var/cache/nginx/scgi_temp \
     && mkdir -p /var/run \
     && mkdir -p /var/log/nginx \
-    && mkdir -p /usr/share/nginx/html
+    && mkdir -p /usr/share/nginx/html \
+    && touch /var/run/nginx.pid 
 
 # 确保 nginx 用户有权限访问这些目录
 RUN chown -R nginx:nginx /var/cache/nginx \
@@ -21,13 +22,15 @@ RUN chown -R nginx:nginx /var/cache/nginx \
     && chown -R nginx:nginx /usr/share/nginx/html \
     && chown -R nginx:nginx /etc/nginx/conf.d \
     && chown -R nginx:nginx /etc/nginx/conf.d/default.conf
+    && chmod -R nginx:nginx /var/run/nginx.pid
 
 RUN chmod -R 755 /var/cache/nginx \
     && chmod -R 755 /var/run \
     && chmod -R 755 /var/log/nginx \
     && chmod -R 755 /usr/share/nginx/html \
     && chmod -R 755 /etc/nginx/conf.d \
-    && chmod -R 755 /etc/nginx/conf.d/default.conf
+    && chmod -R 777 /etc/nginx/conf.d/default.conf
+    && chmod -R 777 /var/run/nginx.pid
 
 # 复制 nginx 配置文件
 COPY nginx.conf /etc/nginx/nginx.conf
